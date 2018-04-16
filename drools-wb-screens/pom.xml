@@ -27,6 +27,7 @@
     <module>drools-wb-guided-rule-editor</module>
     <module>drools-wb-guided-scorecard-editor</module>
     <module>drools-wb-guided-template-editor</module>
+    <module>drools-wb-scenario-editor</module>
     <module>drools-wb-scorecard-xls-editor</module>
     <module>drools-wb-test-scenario-editor</module>
     <module>drools-wb-workitems-editor</module>

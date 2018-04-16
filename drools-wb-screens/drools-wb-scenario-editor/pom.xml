@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.drools</groupId>
+    <artifactId>drools-wb-screens</artifactId>
+    <version>7.8.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>drools-wb-scenario-editor</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Drools Workbench - Scenario Editor</name>
+  <description>Drools Workbench - Scenario Editor</description>
+
+  <modules>
+    <module>drools-wb-scenario-editor-api</module>
+    <module>drools-wb-scenario-editor-backend</module>
+    <module>drools-wb-scenario-editor-client</module>
+  </modules>
+
+</project>

@@ -810,6 +810,20 @@
 
     <dependency>
       <groupId>org.drools</groupId>
+      <artifactId>drools-wb-scenario-editor-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-wb-scenario-editor-client</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-wb-scenario-editor-backend</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.drools</groupId>
       <artifactId>drools-wb-test-scenario-editor-api</artifactId>
     </dependency>
     <dependency>
