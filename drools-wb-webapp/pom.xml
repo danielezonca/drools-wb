@@ -1086,6 +1086,7 @@
           <module>org.drools.workbench.DroolsWorkbench</module>
           <logLevel>INFO</logLevel>
           <noServer>false</noServer>
+          <superDevMode>true</superDevMode>
           <server>org.jboss.errai.cdi.server.gwt.EmbeddedWildFlyLauncher</server>
           <disableCastChecking>true</disableCastChecking>
           <runTarget>drools-wb.html</runTarget>
@@ -1175,6 +1176,8 @@
             <compileSourcesArtifact>org.drools:drools-wb-dsl-text-editor-client</compileSourcesArtifact>
             <compileSourcesArtifact>org.drools:drools-wb-globals-editor-api</compileSourcesArtifact>
             <compileSourcesArtifact>org.drools:drools-wb-globals-editor-client</compileSourcesArtifact>
+            <compileSourcesArtifact>org.drools:drools-wb-scenario-editor-api</compileSourcesArtifact>
+            <compileSourcesArtifact>org.drools:drools-wb-scenario-editor-client</compileSourcesArtifact>
             <compileSourcesArtifact>org.drools:drools-wb-test-scenario-editor-api</compileSourcesArtifact>
             <compileSourcesArtifact>org.drools:drools-wb-test-scenario-editor-client</compileSourcesArtifact>
             <compileSourcesArtifact>org.drools:drools-wb-dtable-xls-editor-api</compileSourcesArtifact>
