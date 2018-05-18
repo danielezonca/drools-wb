@@ -17,7 +17,14 @@
 package org.drools.workbench.screens.scenario.client.editor;
 
 import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
+import elemental2.dom.HTMLButtonElement;
+import org.jboss.errai.ui.shared.api.annotations.DataField;
+import org.jboss.errai.ui.shared.api.annotations.EventHandler;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 import org.kie.workbench.common.widgets.metadata.client.KieEditorViewImpl;
 
@@ -26,6 +33,28 @@ import org.kie.workbench.common.widgets.metadata.client.KieEditorViewImpl;
 public class ScenarioEditorViewImpl
         extends KieEditorViewImpl
         implements ScenarioEditorView {
+
+    private ScenarioEditorPresenter presenter;
+
+    // test
+
+
+    @Inject
+    @DataField("addButton")
+    private HTMLButtonElement addButton;
+
+    //@Inject
+//    public ScenarioEditorViewImpl(final HTMLButtonElement addButton) {
+//        this.addButton = addButton;
+//    }
+
+    public ScenarioEditorViewImpl() {
+    }
+
+    @EventHandler("addButton")
+    public void addButtonCommand(ClickEvent event) {
+        Window.alert("Hello, World!");
+    }
 
     @Override
     public void setContent() {
