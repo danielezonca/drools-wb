@@ -110,6 +110,7 @@ public class ScenarioEditorPresenter
     @Override
     protected void loadContent() {
         view.showLoading();
+        view.init();
         globalsEditorService.call(getModelSuccessCallback(),
                                   getNoSuchFileExceptionErrorCallback()).loadContent(versionRecordManager.getCurrentPath());
     }

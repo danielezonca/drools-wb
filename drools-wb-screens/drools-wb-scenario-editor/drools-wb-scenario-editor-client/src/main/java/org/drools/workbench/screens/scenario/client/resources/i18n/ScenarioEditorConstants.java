@@ -28,4 +28,7 @@ public interface ScenarioEditorConstants {
 
     @TranslationKey(defaultValue = "")
     String NewScenarioHandlerNewScenarioDescription = "NewScenarioHandler.NewScenarioDescription";
+
+    @TranslationKey(defaultValue = "")
+    String ScenarioEditorViewImplExpressionBuilder = "ScenarioEditorViewImpl.ExpressionBuilder";
 }

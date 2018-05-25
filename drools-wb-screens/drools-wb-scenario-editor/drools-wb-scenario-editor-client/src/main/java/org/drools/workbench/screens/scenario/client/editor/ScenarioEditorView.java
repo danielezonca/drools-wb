@@ -23,4 +23,6 @@ public interface ScenarioEditorView extends KieEditorView,
                                             IsWidget {
 
     void setContent();
+
+    void init();
 }
