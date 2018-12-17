@@ -16,6 +16,7 @@
 package org.drools.workbench.screens.scenariosimulation.client.commands.actualcommands;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -183,5 +184,21 @@ public abstract class AbstractScenarioSimulationCommand extends AbstractCommand<
         context.getScenarioGridPanel().onResize();
         context.getScenarioGridPanel().select();
         return CommandResultBuilder.SUCCESS;
+    }
+
+    public void commonInternalExecution(ScenarioSimulationContext.Status status, ScenarioSimulationContext context, int index) {
+        FactMappingType factMappingType = FactMappingType.valueOf(status.getColumnGroup().toUpperCase());
+        Map.Entry<String, String> validPlaceholders = context.getModel().getValidPlaceholders();
+        String instanceTitle = validPlaceholders.getKey();
+        String propertyTitle = validPlaceholders.getValue();
+        final ScenarioGridColumn scenarioGridColumnLocal = getScenarioGridColumnLocal(instanceTitle,
+                                                                                      propertyTitle,
+                                                                                      status.getColumnId(),
+                                                                                      status.getColumnGroup(),
+                                                                                      factMappingType,
+                                                                                      context.getScenarioGridPanel(),
+                                                                                      context.getScenarioGridLayer(),
+                                                                                      ScenarioSimulationEditorConstants.INSTANCE.defineValidType());
+        context.getModel().insertColumn(index, scenarioGridColumnLocal);
     }
 }

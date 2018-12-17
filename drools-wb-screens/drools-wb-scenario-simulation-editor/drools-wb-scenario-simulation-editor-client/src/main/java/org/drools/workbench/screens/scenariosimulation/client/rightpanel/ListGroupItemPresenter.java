@@ -44,17 +44,9 @@ public class ListGroupItemPresenter implements ListGroupItemView.Presenter {
     private String factName = null;
 
     @Override
-    public void enable() {
-        this.disabled.set(false);
-        factName = null;
-        listGroupItemViewMap.values().forEach(ListGroupItemView::disable);
-    }
-
-    @Override
     public void enable(String factName) {
         this.disabled.set(false);
         this.factName = factName;
-        listGroupItemViewMap.values().forEach(ListGroupItemView::enable);
     }
 
     @Override
@@ -80,15 +72,6 @@ public class ListGroupItemPresenter implements ListGroupItemView.Presenter {
         if (fieldItemPresenter.fieldItemMap.containsKey(key)) {
             fieldItemPresenter.fieldItemMap.get(key).onFieldElementClick();
         }
-    }
-
-    @Override
-    public void disable() {
-        this.disabled.set(true);
-        factName = null;
-        listGroupItemViewMap.values().forEach(ListGroupItemView::closeRow);
-        unselectAll();
-        fieldItemPresenter.unselectAll();
     }
 
     @Override
@@ -132,11 +115,6 @@ public class ListGroupItemPresenter implements ListGroupItemView.Presenter {
                 FactModelTree factModelTree = rightPanelPresenter.getFactModelTreeFromFactTypeMap(listGroupItemView.getFactType());
                 populateListGroupItemView(listGroupItemView, listGroupItemView.getParentPath(), listGroupItemView.getFactName(), factModelTree);
                 listGroupItemView.setToExpand(false);
-                if (factName != null) {
-                    listGroupItemView.disable();
-                } else {
-                    listGroupItemView.enable();
-                }
             }
             listGroupItemView.expandRow();
         }

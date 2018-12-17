@@ -191,7 +191,6 @@ public class RightPanelPresenterTest extends AbstractRightPanelTest {
     public void onEnableEditorTabWithoutFactName() {
         rightPanelPresenter.onEnableEditorTab();
         verify(rightPanelPresenter, times(1)).onSearchedEvent(eq(""));
-        verify(listGroupItemPresenterMock, times(1)).enable();
         verify(listGroupItemPresenterMock, never()).enable(anyString());
         verify(rightPanelViewMock, times(1)).enableEditorTab();
     }
@@ -201,15 +200,12 @@ public class RightPanelPresenterTest extends AbstractRightPanelTest {
         rightPanelPresenter.onEnableEditorTab(FACT_NAME, null, false);
         verify(rightPanelPresenter, times(1)).onPerfectMatchSearchedEvent(eq(FACT_NAME), eq(false));
         verify(listGroupItemPresenterMock, times(1)).enable(eq(FACT_NAME));
-        verify(listGroupItemPresenterMock, never()).enable();
         verify(rightPanelViewMock, times(1)).enableEditorTab();
     }
 
     @Test
     public void onDisableEditorTab() {
         rightPanelPresenter.onDisableEditorTab();
-        verify(listGroupItemPresenterMock, times(1)).disable();
-        verify(listGroupItemPresenterMock, never()).enable();
         verify(rightPanelViewMock, times(1)).disableEditorTab();
     }
 
